@@ -1,0 +1,18 @@
+--- libmpack-1.0.2/binding/lua/Makefile~	2016-09-17 14:54:37.000000000 +0300
++++ libmpack-1.0.2/binding/lua/Makefile	2016-09-17 14:54:46.623394052 +0300
+@@ -33,12 +33,12 @@
+ 	-Wstrict-prototypes -Wno-unused-parameter -pedantic
+ CFLAGS += -fPIC -DMPACK_DEBUG_REGISTRY_LEAK
+ 
+-LUA_INCLUDE := $(shell $(PKG_CONFIG) --cflags lua-$(LUA_VERSION_MAJ_MIN) 2>/dev/null || echo "-I/usr/include/lua$(LUA_VERSION_MAJ_MIN)")
+-LUA_LIB := $(shell $(PKG_CONFIG) --libs lua-$(LUA_VERSION_MAJ_MIN) 2>/dev/null || echo "-llua$(LUA_VERSION_MAJ_MIN)")
++LUA_INCLUDE := $(shell $(PKG_CONFIG) --cflags lua$(LUA_VERSION_MAJ_MIN) 2>/dev/null || echo "-I/usr/include/lua$(LUA_VERSION_MAJ_MIN)")
++LUA_LIB := $(shell $(PKG_CONFIG) --libs lua$(LUA_VERSION_MAJ_MIN) 2>/dev/null || echo "-llua$(LUA_VERSION_MAJ_MIN)")
+ INCLUDES = $(LUA_INCLUDE)
+ LIBS = $(LUA_LIB)
+ 
+-LUA_CMOD_INSTALLDIR := $(shell $(PKG_CONFIG) --variable=INSTALL_CMOD lua-$(LUA_VERSION_MAJ_MIN) 2>/dev/null || echo "/usr/lib/lua/$(LUA_VERSION_MAJ_MIN)")
++LUA_CMOD_INSTALLDIR := $(shell $(PKG_CONFIG) --variable=INSTALL_CMOD lua$(LUA_VERSION_MAJ_MIN) 2>/dev/null || echo "/usr/lib/lua/$(LUA_VERSION_MAJ_MIN)")
+ 
+ 
+ # Misc
