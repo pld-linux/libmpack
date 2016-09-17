@@ -23,8 +23,10 @@ Patch1:		https://github.com/tarruda/libmpack/commit/0cc47f7e859b7124cf46483a6e59
 Patch2:		lua.patch
 URL:		https://github.com/tarruda/libmpack/
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 %if %{with lua}
-BuildRequires:	lua-devel >= %{luaver}
+BuildRequires:	lua51
+BuildRequires:	lua51-devel >= %{luaver}
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
