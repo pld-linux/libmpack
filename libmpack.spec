@@ -11,7 +11,7 @@
 Summary:	Simple implementation of msgpack in C
 Name:		libmpack
 Version:	1.0.3
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Libraries
 Source0:	https://github.com/tarruda/libmpack/archive/%{version}/%{name}-%{version}.tar.gz
@@ -70,6 +70,7 @@ Lua binding to libmpack.
 	VERBOSE=1
 
 %if %{with lua}
+CFLAGS="%{rpmcflags}" \
 %{__make} -C binding/lua \
 	CC="%{__cc}" \
 	USE_SYSTEM_LUA=yes
